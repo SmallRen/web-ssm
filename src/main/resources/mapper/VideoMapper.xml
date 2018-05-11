@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.renbaojia.dao.VideoMapper">
+  <resultMap id="BaseResultMap" type="com.renbaojia.model.Video">
+    <id column="v_id" jdbcType="INTEGER" property="vId" />
+    <result column="v_sc_id" jdbcType="INTEGER" property="vScId" />
+    <result column="v_date" jdbcType="TIMESTAMP" property="vDate" />
+    <result column="v_location" jdbcType="VARCHAR" property="vLocation" />
+    <result column="v_path" jdbcType="VARCHAR" property="vPath" />
+    <result column="v_name" jdbcType="VARCHAR" property="vName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    v_id, v_sc_id, v_date, v_location, v_path,v_name
+  </sql>
+  <select id="selectByExample" parameterType="com.renbaojia.model.VideoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from video
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from video
+    where v_id = #{vId,jdbcType=INTEGER}
+  </select>
+  <select id="selectList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from video
+    where v_Sc_Id = #{vId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from video
+    where v_id = #{vId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.renbaojia.model.VideoExample">
+    delete from video
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.renbaojia.model.Video">
+    insert into video (v_id, v_sc_id, v_date, 
+      v_location, v_path)
+    values (#{vId,jdbcType=INTEGER}, #{vScId,jdbcType=INTEGER}, #{vDate,jdbcType=TIMESTAMP}, 
+      #{vLocation,jdbcType=VARCHAR}, #{vPath,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.renbaojia.model.Video">
+    insert into video
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vId != null">
+        v_id,
+      </if>
+      <if test="vScId != null">
+        v_sc_id,
+      </if>
+      <if test="vDate != null">
+        v_date,
+      </if>
+      <if test="vLocation != null">
+        v_location,
+      </if>
+      <if test="vPath != null">
+        v_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vId != null">
+        #{vId,jdbcType=INTEGER},
+      </if>
+      <if test="vScId != null">
+        #{vScId,jdbcType=INTEGER},
+      </if>
+      <if test="vDate != null">
+        #{vDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vLocation != null">
+        #{vLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="vPath != null">
+        #{vPath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.renbaojia.model.VideoExample" resultType="java.lang.Long">
+    select count(*) from video
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update video
+    <set>
+      <if test="record.vId != null">
+        v_id = #{record.vId,jdbcType=INTEGER},
+      </if>
+      <if test="record.vScId != null">
+        v_sc_id = #{record.vScId,jdbcType=INTEGER},
+      </if>
+      <if test="record.vDate != null">
+        v_date = #{record.vDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.vLocation != null">
+        v_location = #{record.vLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vPath != null">
+        v_path = #{record.vPath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update video
+    set v_id = #{record.vId,jdbcType=INTEGER},
+      v_sc_id = #{record.vScId,jdbcType=INTEGER},
+      v_date = #{record.vDate,jdbcType=TIMESTAMP},
+      v_location = #{record.vLocation,jdbcType=VARCHAR},
+      v_path = #{record.vPath,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.renbaojia.model.Video">
+    update video
+    <set>
+      <if test="vScId != null">
+        v_sc_id = #{vScId,jdbcType=INTEGER},
+      </if>
+      <if test="vDate != null">
+        v_date = #{vDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vLocation != null">
+        v_location = #{vLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="vPath != null">
+        v_path = #{vPath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where v_id = #{vId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.renbaojia.model.Video">
+    update video
+    set v_sc_id = #{vScId,jdbcType=INTEGER},
+      v_date = #{vDate,jdbcType=TIMESTAMP},
+      v_location = #{vLocation,jdbcType=VARCHAR},
+      v_path = #{vPath,jdbcType=VARCHAR}
+    where v_id = #{vId,jdbcType=INTEGER}
+  </update>
+</mapper>

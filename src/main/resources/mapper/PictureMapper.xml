@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.renbaojia.dao.PictureMapper">
+  <resultMap id="BaseResultMap" type="com.renbaojia.model.Picture">
+    <id column="p_id" jdbcType="INTEGER" property="pId" />
+    <result column="p_sc_id" jdbcType="INTEGER" property="pScId" />
+    <result column="p_date" jdbcType="TIMESTAMP" property="pDate" />
+    <result column="p_location" jdbcType="VARCHAR" property="pLocation" />
+    <result column="p_path" jdbcType="VARCHAR" property="pPath" />
+    <result column="p_name" jdbcType="VARCHAR" property="pName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    p_id, p_sc_id, p_date, p_location, p_path,p_name
+  </sql>
+  <select id="selectList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from picture
+    where p_Sc_Id = #{pId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByExample" parameterType="com.renbaojia.model.PictureExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from picture
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from picture
+    where p_id = #{pId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from picture
+    where p_id = #{pId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.renbaojia.model.PictureExample">
+    delete from picture
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.renbaojia.model.Picture">
+    insert into picture (p_id, p_sc_id, p_date, 
+      p_location, p_path)
+    values (#{pId,jdbcType=INTEGER}, #{pScId,jdbcType=INTEGER}, #{pDate,jdbcType=TIMESTAMP}, 
+      #{pLocation,jdbcType=VARCHAR}, #{pPath,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.renbaojia.model.Picture">
+    insert into picture
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pId != null">
+        p_id,
+      </if>
+      <if test="pScId != null">
+        p_sc_id,
+      </if>
+      <if test="pDate != null">
+        p_date,
+      </if>
+      <if test="pLocation != null">
+        p_location,
+      </if>
+      <if test="pPath != null">
+        p_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pId != null">
+        #{pId,jdbcType=INTEGER},
+      </if>
+      <if test="pScId != null">
+        #{pScId,jdbcType=INTEGER},
+      </if>
+      <if test="pDate != null">
+        #{pDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pLocation != null">
+        #{pLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="pPath != null">
+        #{pPath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.renbaojia.model.PictureExample" resultType="java.lang.Long">
+    select count(*) from picture
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update picture
+    <set>
+      <if test="record.pId != null">
+        p_id = #{record.pId,jdbcType=INTEGER},
+      </if>
+      <if test="record.pScId != null">
+        p_sc_id = #{record.pScId,jdbcType=INTEGER},
+      </if>
+      <if test="record.pDate != null">
+        p_date = #{record.pDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.pLocation != null">
+        p_location = #{record.pLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pPath != null">
+        p_path = #{record.pPath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update picture
+    set p_id = #{record.pId,jdbcType=INTEGER},
+      p_sc_id = #{record.pScId,jdbcType=INTEGER},
+      p_date = #{record.pDate,jdbcType=TIMESTAMP},
+      p_location = #{record.pLocation,jdbcType=VARCHAR},
+      p_path = #{record.pPath,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.renbaojia.model.Picture">
+    update picture
+    <set>
+      <if test="pScId != null">
+        p_sc_id = #{pScId,jdbcType=INTEGER},
+      </if>
+      <if test="pDate != null">
+        p_date = #{pDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pLocation != null">
+        p_location = #{pLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="pPath != null">
+        p_path = #{pPath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where p_id = #{pId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.renbaojia.model.Picture">
+    update picture
+    set p_sc_id = #{pScId,jdbcType=INTEGER},
+      p_date = #{pDate,jdbcType=TIMESTAMP},
+      p_location = #{pLocation,jdbcType=VARCHAR},
+      p_path = #{pPath,jdbcType=VARCHAR}
+    where p_id = #{pId,jdbcType=INTEGER}
+  </update>
+</mapper>

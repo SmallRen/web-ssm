@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--配置数据库连接信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/blog"
+                        userId="root"
+                        password="r011698.">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--指定Javabeen生成的位置-->
+        <javaModelGenerator targetPackage="com.renbaojia.model" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--指定sql映射文件的位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--指定dao接口生成的位置，mapper接口-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.renbaojia.dao" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <table tableName="failed_msg" domainObjectName="FailedMsg"/>
+        <!--<table tableName="articles_img" domainObjectName="ArticlesImg"/>-->
+        <!--<table tableName="admin" domainObjectName="Admin"/>-->
+        <!--<table tableName="loginrecord" domainObjectName="LoginRecord"/>-->
+        <!--<table tableName="SpaceContent" domainObjectName="SpaceContent"/>-->
+        <!--<table tableName="Video" domainObjectName="Video"/>-->
+        <!--<table tableName="Picture" domainObjectName="Picture"/>-->
+        <!--<table tableName="MessageBoard" domainObjectName="MessageBoard"/>-->
+        <!--<table tableName="reverts" domainObjectName="Reverts"/>-->
+        <!--<table tableName="commentaries" domainObjectName="Commentaries"/>-->
+        <!--<table tableName="permissions" domainObjectName="Permissions"/>-->
+        <!--<table tableName="user" domainObjectName="User"/>-->
+        <!--<table tableName="articles" domainObjectName="Articles"/>-->
+        <!--<table tableName="life" domainObjectName="Life"/>-->
+        <!--<table tableName="language" domainObjectName="Language"/>-->
+        <!--<table tableName="ide" domainObjectName="IDE"/>-->
+        <!--<table tableName="exception" domainObjectName="Exception"/>-->
+        <!--<table tableName="sytemtype" domainObjectName="SytemType"/>-->
+    </context>
+</generatorConfiguration>
