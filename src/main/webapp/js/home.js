@@ -469,12 +469,13 @@ function findcheckpassword() {
 
 $(document).ready(function () {
     NProgress.done();
+    console.log('加载完成')
     $.getJSON('http://ip.wheff7.com/ipinfo', function (result) {
         var city = result[1].city_nameCN;
         $.ajax({
             url: "/address?city=" + city,
             async: true,
-            cache: false,
+            cache: true,
             type: "GET",
             dataType: "JSON",
             success: function (result) {
@@ -490,8 +491,6 @@ $(document).ready(function () {
                     $("#wind_strength").html(result.result.sk.wind_strength);
                     $("#humidity").html(result.result.sk.humidity);
                     $("#uv_index").html(result.result.today.uv_index);
-
-
                 }
                 else {
                     console.log('dgfhj' + result)

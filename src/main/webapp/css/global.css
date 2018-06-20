@@ -2,6 +2,10 @@
     background: #fff;
 
 }
+#headerUl :hover{
+    color: #10D07A;
+}
+
 
 body {
     background-color: #e5e5e5;
@@ -182,9 +186,11 @@ body {
 }
 
 .flag {
-    border-radius: 9px;
+
     cursor: pointer;
     padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 15px;
     color: #fff;
 

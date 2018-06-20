@@ -27,7 +27,6 @@ import java.util.Date;
 public class WeatherController {
     @Autowired
     WeatherService weatherService;
-
     @GetMapping(value = "/address", produces = "text/html;charset=UTF-8")
     public String location(@RequestParam("city") String location) {
         String weatherJson = "";

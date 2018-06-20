@@ -25,7 +25,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-
+    <link rel="stylesheet" href="${ctx}/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="${ctx}/assets/css/app.css">
 </head>
 <body>
 <div class="page">
@@ -33,7 +34,7 @@
     <nav class="navbar navbar-default color" style="border:0px;border-radius: 0px;margin-bottom: 0px;">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  style="border-radius: 0px;"
                         aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>

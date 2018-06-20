@@ -102,7 +102,7 @@
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/"/>
         <property name="successUrl" value="/"/>
-        <property name="unauthorizedUrl" value="/html/unauthorized.html"/>
+        <property name="unauthorizedUrl" value="html/unauthorized.html"/>
         <property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"></property>
         <property name="filters">
             <map>

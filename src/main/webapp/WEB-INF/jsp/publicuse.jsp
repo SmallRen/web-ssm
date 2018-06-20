@@ -7,33 +7,33 @@
      data-keyboard="false"
      aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-sm" style="width:320px" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius: 0">
             <div class="modal-header"
                  style="background: #f3f3f3;border-top-left-radius:5px ;border-top-right-radius:5px">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">用户登录</h4>
+                <h4 class="modal-title" id="myModalLabel" style="font-weight: bold ;">用户登录</h4>
             </div>
             <div class="modal-body" id="modal1">
                 <br>
                 <form id="logininfo">
-                    <div class="input-group">
-                        <span class="input-group-addon">手机号</span>
-                        <input id="username" name="userPhone" type="text" class="form-control"
+                    <div class="input-group" >
+                        <span class="input-group-addon"  style="border-radius: 0">手机号</span>
+                        <input id="username" name="userPhone" type="text" class="form-control"  style="border-radius: 0"
                                placeholder="11位手机号"
                                aria-describedby="basic-addon1">
 
                     </div>
                     <span id="usernamespan" class="help-block"></span>
                     <div class="input-group">
-                        <span class="input-group-addon">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
-                        <input id="password" type="password" name="password" class="form-control"
+                        <span class="input-group-addon"  style="border-radius: 0">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+                        <input  style="border-radius: 0" id="password" type="password" name="password" class="form-control"
                                placeholder="8-20位字母或数字包括下划线"
                                aria-describedby="basic-addon1">
 
                     </div>
                     <span id="passwordspan" class="help-block"></span>
-                    <button id="submit" type="button" onclick="check()"
+                    <button  style="border-radius: 0" id="submit" type="button" onclick="check()"
                             class="btn btn-primary btn-lg btn-block">登录
                     </button>
                     <br>
@@ -45,8 +45,8 @@
                 <br>
                 <form id="register">
                     <div class="input-group">
-                        <span class="input-group-addon">手机号</span>
-                        <input id="phone" name="phone" type="text" class="form-control"
+                        <span  style="border-radius: 0" class="input-group-addon">手机号</span>
+                        <input  style="border-radius: 0" id="phone" name="phone" type="text" class="form-control"
                                placeholder="11位手机号"
                                aria-describedby="basic-addon1">
                         <span hidden id="registeraddress" name="address"></span>
@@ -54,23 +54,23 @@
                     <span id="phonespan" class="help-block"></span>
 
                     <div class="input-group">
-                        <span class="input-group-addon">输&nbsp;&nbsp;&nbsp;&nbsp;入</span>
-                        <input id="code" type="text" class="form-control" name="msgCode"
+                        <span  style="border-radius: 0" class="input-group-addon">输&nbsp;&nbsp;&nbsp;&nbsp;入</span>
+                        <input  style="border-radius: 0" id="code" type="text" class="form-control" name="msgCode"
                                aria-describedby="basic-addon1">
-                        <span class="input-group-addon" id="getcode"
+                        <span  style="border-radius: 0" class="input-group-addon" id="getcode"
                               style="cursor: pointer;" onclick="sendMessageregister()">  获取验证码</span>
                     </div>
                     <span id="yanzhengma" class="help-block"></span>
 
                     <div class="input-group">
-                        <span class="input-group-addon">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
-                        <input name="password" id="registerpassword" type="password" class="form-control"
+                        <span  style="border-radius: 0" class="input-group-addon">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+                        <input  style="border-radius: 0" name="password" id="registerpassword" type="password" class="form-control"
                                placeholder="8-20位字母或数字"
                                aria-describedby="basic-addon1">
 
                     </div>
                     <span id="registerspan" class="help-block"></span>
-                    <button id="registersubmit" type="button" onclick="registercheck()"
+                    <button  style="border-radius: 0" id="registersubmit" type="button" onclick="registercheck()"
                             class="btn btn-primary btn-lg btn-block">注册
                     </button>
                     <br>
@@ -81,30 +81,30 @@
                 <br>
                 <form id="find">
                     <div class="input-group">
-                        <span class="input-group-addon">手机号</span>
-                        <input id="findphone" type="text" class="form-control"
+                        <span  style="border-radius: 0" class="input-group-addon">手机号</span>
+                        <input style="border-radius: 0" id="findphone" type="text" class="form-control"
                                placeholder="11位手机号"
                                aria-describedby="basic-addon1">
                     </div>
-                    <span id="findphonespan" class="help-block"></span>
+                    <span style="border-radius: 0" id="findphonespan" class="help-block"></span>
                     <div class="input-group">
-                        <span class="input-group-addon">输&nbsp;&nbsp;&nbsp;&nbsp;入</span>
-                        <input id="findcode" type="text" class="form-control"
+                        <span  style="border-radius: 0" class="input-group-addon">输&nbsp;&nbsp;&nbsp;&nbsp;入</span>
+                        <input style="border-radius: 0" id="findcode" type="text" class="form-control"
                                aria-describedby="basic-addon1">
-                        <span class="input-group-addon" id="findgetcode"
+                        <span style="border-radius: 0" class="input-group-addon" id="findgetcode"
                               style="cursor: pointer;" onclick="findsendMessage()">      获取验证码</span>
                     </div>
-                    <span id="findyanzhengma" class="help-block"></span>
+                    <span style="border-radius: 0" id="findyanzhengma" class="help-block"></span>
 
                     <div class="input-group">
-                        <span class="input-group-addon">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
-                        <input id="findpassword" type="password" class="form-control"
+                        <span style="border-radius: 0" class="input-group-addon">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+                        <input style="border-radius: 0" id="findpassword" type="password" class="form-control"
                                placeholder="8-20位字母或数字"
                                aria-describedby="basic-addon1">
 
                     </div>
-                    <span id="findpwdspan" class="help-block"></span>
-                    <button id="findsubmit" type="button" onclick="findcheck()"
+                    <span style="border-radius: 0" id="findpwdspan" class="help-block"></span>
+                    <button style="border-radius: 0" id="findsubmit" type="button" onclick="findcheck()"
                             class="btn btn-primary btn-lg btn-block">确定
                     </button>
                     <br>
@@ -126,7 +126,7 @@
      data-keyboard="false"
      aria-labelledby="myregisterModal">
     <div class="modal-dialog modal-sm350" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius: 0">
             <div class="modal-header"
                  style="background: #f3f3f3;border-top-left-radius:5px ;border-top-right-radius:5px">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="jumpindex()"><span
@@ -175,7 +175,7 @@
 <!-- Modal -->
 <div class="modal fade" id="msgmodal" tabindex="-1"  style=" margin-top: 8%;" role="dialog" aria-labelledby="myModalLabel1">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius: 0">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
@@ -193,7 +193,7 @@
 </div>
 <div class="modal fade" id="msgError" tabindex="-1"  style=" margin-top: 8%;" role="dialog" aria-labelledby="myModalLabel2">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="border-radius: 0">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>

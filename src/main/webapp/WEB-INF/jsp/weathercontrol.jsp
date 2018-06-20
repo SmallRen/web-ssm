@@ -1,12 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<div class="col-md-3 rightdiv">
-
+<div class="col-md-3 rightdiv ">
     <div style="height: 50px; margin-top: 0">
         <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <input type="text" style="width: 100%;border-radius: 3px" class="form-control" placeholder="输入您要搜索的内容"
+            <div class="form-group" >
+                <input type="text" style="border-radius: 0" style="width: 100%;" class="form-control" placeholder="输入您要搜索的内容"
                        >
             </div>
         </form>
@@ -114,20 +113,5 @@
         </ul>
 
     </div>
-    <div style="float: left; margin-top: 10px;margin-bottom: 20px;">
-        <ul class="tianqiul">
-            <li><h4><b><span style="font-weight: bold;font-size: 24px;">最新文章</span></b></h4></li>
-            <hr style="margin: 0;padding: 0">
-            <c:forEach items="${newArticles.list}" var="c">
-            <li style="cursor: pointer;margin-top: 10px" onclick="window.location.href='/details.html/${c.id}'">
 
-                <img src="data:image/jpg;base64,${c.thtmeImg}" style="float:left;margin-right: 5px;border-radius: 3px;" width="70px" height="50">
-                <span style="font-size: 12px;"> ${c.title}</span>
-                <p style="font-size: 10px;color: #686868">发布日期：${c.date}</p>
-                <br>
-            </li>
-            </c:forEach>
-        </ul>
-
-    </div>
 </div>

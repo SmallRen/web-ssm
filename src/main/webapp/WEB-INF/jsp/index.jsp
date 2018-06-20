@@ -20,38 +20,37 @@
     <script src="${pageContext.request.contextPath}/js/home.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/global.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nprogress.css" type="text/css">
-
+    <link rel="stylesheet" href="${ctx}/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="${ctx}/assets/css/app.css">
 </head>
 <body>
 <div class="page">
     <div style="height: 30px;width: 100%;background-color: #fff"></div>
     <nav class="navbar navbar-default color" style="border:0px;border-radius: 0px;margin-bottom: 0px;">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+            <div class="navbar-header" style="margin-bottom: 30px;">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" style="border-radius: 0px;"
                         aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${pageContext.request.contextPath}/"><span id="qweer"
-                                                                                         class="h1">SmallRen</span></a>
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/"><span id="qweer"    class="h1">SmallRen</span></a>
             </div>
             <div id="navbar" class="collapse navbar-collapse navml ">
                 <ul class="nav navbar-nav " id="headerUl">
-                    <li class="active font18"><a href="${pageContext.request.contextPath}/">首页</a>
+                    <li class=" active font18" ><a    href="${pageContext.request.contextPath}/">首页</a>
                     </li>
-                    <li class="mouse font18"><a
-                            href="${pageContext.request.contextPath}/about.html">关于</a></li>
+                    <li class="mouse  font18"><a   href="${pageContext.request.contextPath}/about.html">关于</a></li>
 
-                    <li class="mouse font18"><a href="${pageContext.request.contextPath}/live.html">慢生活</a>
+                    <li class="mouse  font18"><a href="${pageContext.request.contextPath}/live.html">慢生活</a>
                     </li>
-                    <li class="mouse font18"><a
+                    <li class=" mouse font18"><a
                             href="${pageContext.request.contextPath}/share.html">学习时刻</a>
                     </li>
 
-                    <li class="mouse font18" ><a
+                    <li class=" mouse font18" ><a
                             href="${pageContext.request.contextPath}/MessageBoard.html">留言板</a>
                     </li>
                     <jsp:include page="loginheader.jsp"/>
@@ -73,8 +72,8 @@
     </nav>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-9" style="padding-left: 30px;padding-right: 30px;padding-bottom: 30px;">
+        <div class="row ">
+            <div class="col-md-9 clearfix " style="padding-left: 30px;padding-right: 30px;padding-bottom: 30px;">
                 <div id="myCarousel" class="carousel slide">
                     <!-- 轮播（Carousel）指标 -->
                     <ol class="carousel-indicators">
@@ -111,8 +110,44 @@
                     <a class="carousel-control right" href="#myCarousel"
                        data-slide="next">&rsaquo;</a>
                 </div>
+                <div style="float: left; margin-top: 10px;margin-bottom: 20px;width: 100%">
+                    <ul class="tianqiul">
+                        <li><h4><b><span style="font-weight: bold;font-size: 24px;">最热文章</span></b></h4></li>
+                        <hr style="margin: 0;padding: 0;margin-bottom: 5px">
+                        <c:forEach items="${newArticles.list}" var="c">
+                            <li style="cursor: pointer;margin-top: 0px" onclick="window.location.href='/details.html/${c.id}'">
+                                <img src="data:image/jpg;base64,${c.thtmeImg}" style="float:left;margin-right: 5px;" width="40" height="30">
+                                <span style="font-size: 14px;"> ${c.title}</span>
+                                <span style="float:right;font-size: 4px;"><img src="${pageContext.request.contextPath}/img/浏览.png" width="15" height="15"/>浏览数1523</span>
+                                <p style="font-size: 4px;color: #686868">发布日期：${c.date}</p>
+
+                            </li>
+
+                        </c:forEach>
+                    </ul>
+
+                </div>
+                <div style="float: left; margin-top: 10px;margin-bottom: 20px;width: 100%">
+                    <ul class="tianqiul">
+                        <li><h4><b><span style="font-weight: bold;font-size: 24px;">最新文章</span></b></h4></li>
+                        <hr style="margin: 0;padding: 0;margin-bottom: 5px">
+                        <c:forEach items="${newArticles.list}" var="c">
+                            <li style="cursor: pointer;margin-top: 0px" onclick="window.location.href='/details.html/${c.id}'">
+                                <img src="data:image/jpg;base64,${c.thtmeImg}" style="float:left;margin-right: 5px;" width="40" height="30">
+                                <span style="font-size: 14px;"> ${c.title}</span>
+                                <span style="float:right;font-size: 4px;"><img src="${pageContext.request.contextPath}/img/浏览.png" width="15" height="15"/>浏览数1523</span>
+                                <p style="font-size: 4px;color: #686868">发布日期：${c.date}</p>
+
+                            </li>
+
+                        </c:forEach>
+                    </ul>
+
+                </div>
             </div>
+
             <jsp:include page="weathercontrol.jsp"/>
+
         </div>
     </div>
     <jsp:include page="publicuse.jsp"/>

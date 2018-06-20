@@ -135,16 +135,14 @@
                 </div>
             </div>
             <div class="am-u-sm-12">
-                <table class="am-table am-table-striped am-table-hover table-main">
-                    <thead>
-                    <tr>
-                        <th>日志内容</th>
-                        <th>查看</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+
+                <div class="am-g error-log">
+                    <div class="am-u-sm-12 am-u-sm-centered">
+        <pre class="am-pre-scrollable" id="tbody">
+        </pre>
+                    </div>
+                </div>
+            </div>
                 <hr>
             </div>
         </div>
@@ -217,15 +215,7 @@
             dataType: 'JSON',
             success: function (result) {
                 $.each(result, function (n, value) {
-                    $("tbody").append(' <tr class="' +
-                        '" data-id="'  + '">' +
-                        '<td><span class="content" style="width: 900px;height: 20px;overflow: hidden;display: block;text-overflow: ellipsis; white-space: nowrap;cursor: pointer; ">' + value+ '</span>' +
-                        '<td><button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"onclick="' +
-                        'detilecontent(this)"> <span class="am-icon-trash-o"></span> 查看 </button></td>' +
-                        '' +
-                        '' +
-                        '' +
-                        '</td>    </tr>');
+                    $("#tbody").append(value+"<br>");
                 });
 
 //                $("table").after('<div class="am-cf"> <div class="am-fr"> <ul class="am-pagination tpl-pagination" >' +

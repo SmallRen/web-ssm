@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-
+    @GetMapping("/404.html")
+    public String ErrorPage404() {
+        return "404";
+    }
     @GetMapping("/about.html")
     public String about() {
         return "about";
