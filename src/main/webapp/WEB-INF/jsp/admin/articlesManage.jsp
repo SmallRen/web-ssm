@@ -169,17 +169,17 @@
                 <div class="am-form tpl-form-line-form">
                     <span hidden id="articleid"></span>
                     <div class="am-form-group">
-                        <label class="am-u-sm-3 am-form-label">标题 <span
+                        <label class="am-u-sm-1 am-form-label">标题 <span
                                 class="tpl-form-line-small-title">Title</span></label>
-                        <div class="am-u-sm-9">
+                        <div class="am-u-sm-11">
                             <input type="text" class="tpl-form-input" id="title" placeholder="请输入标题文字">
                             <small>请填写标题文字10-20字左右。</small>
                         </div>
                     </div>
                     <div class="am-form-group">
-                        <label class="am-u-sm-3 am-form-label">分类<span
+                        <label class="am-u-sm-1 am-form-label">分类<span
                                 class="tpl-form-line-small-title">Type</span></label>
-                        <div class="am-u-sm-9">
+                        <div class="am-u-sm-11">
                             <label style="font-size: 16px;color: #888;font-weight: normal"><input name="type"
                                                                                                   onchange="radiochange()"
                                                                                                   type="radio"
@@ -192,18 +192,18 @@
                         </div>
                     </div>
                     <div class="am-form-group">
-                        <label class="am-u-sm-3 am-form-label">分类<span
+                        <label class="am-u-sm-1 am-form-label">分类<span
                                 class="tpl-form-line-small-title">Type</span></label>
-                        <div class="am-u-sm-9">
-                            <select data-am-selected="{btnWidth: '30%', btnSize: 'md', btnStyle: 'secondary'}">
+                        <div class="am-u-sm-11">
+                            <select data-am-selected="{btnWidth: '15%', btnSize: 'md', btnStyle: 'secondary'}">
 
                             </select>
                         </div>
                     </div>
                     <div class="am-form-group">
-                        <label class="am-u-sm-3 am-form-label">封面图片<span
+                        <label class="am-u-sm-1 am-form-label">封面图片<span
                                 class="tpl-form-line-small-title">Images</span></label>
-                        <div class="am-u-sm-9">
+                        <div class="am-u-sm-11">
                             <div class="am-form-group am-form-file">
                                 <div class="tpl-form-file-img">
                                     <img src="" alt="" id="thtmeImg">
@@ -219,9 +219,9 @@
                         </div>
                     </div>
                     <div class="am-form-group">
-                        <label class="am-u-sm-3 am-form-label" for="preface">描述<span
+                        <label class="am-u-sm-1 am-form-label" for="preface">描述<span
                                 class="tpl-form-line-small-title">Description </span></label>
-                        <div class="am-u-sm-9">
+                        <div class="am-u-sm-11">
                             <textarea rows="10" id="preface" cols="20">
                             </textarea>
                             <div>
@@ -230,10 +230,10 @@
                     </div>
 
                     <div class="am-form-group">
-                        <label class="am-u-sm-3 am-form-label">文章内容
+                        <label class="am-u-sm-1 am-form-label">文章内容
                             <span>Content</span></label>
-                        <div class="am-u-sm-9">
-                            <div id="editor"></div>
+                        <div class="am-u-sm-11" >
+                            <div id="editor" style="margin-left: 100px"></div>
                         </div>
                     </div>
                 </div>
@@ -425,9 +425,17 @@
             dataType: 'JSON',
             success: function (result) {
                 $.each(result, function (n, value) {
+                    if( value.type==type){
+
+
+                        $("select").append("<option selected value='" + value.type +
+                            "'>" + value.type +
+                            "</option>")
+                    }
+else{
                     $("select").append("<option value='" + value.type +
                         "'>" + value.type +
-                        "</option>")
+                        "</option>")}
                 });
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
