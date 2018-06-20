@@ -469,8 +469,8 @@ function findcheckpassword() {
 
 $(document).ready(function () {
     NProgress.done();
-    $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function () {
-        var city = remote_ip_info.city;
+    $.getJSON('http://ip.wheff7.com/ipinfo', function (result) {
+        var city = result[1].city_nameCN;
         $.ajax({
             url: "/address?city=" + city,
             async: true,
