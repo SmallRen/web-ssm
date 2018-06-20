@@ -14,11 +14,11 @@ public class PageController {
     public String about() {
         return "about";
     }
-
-    @GetMapping("/growth.html")
+    //成长暂时废除
+   /* @GetMapping("/growth.html")
     public String growth() {
         return "growth";
-    }
+    }*/
 
 
     @GetMapping("/weatherDetails.html")
@@ -35,7 +35,6 @@ public class PageController {
     public String bindPhone() {
         return "bindIndex";
     }
-
 
 
 }

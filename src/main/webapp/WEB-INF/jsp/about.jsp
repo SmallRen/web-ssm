@@ -44,11 +44,11 @@
                     </li>
                     <li class="active font18"><a
                             href="${ctx}/about.html">关于</a></li>
-                    <li class="mouse font18"><a href="${ctx}/growth.html">成长</a></li>
+
                     <li class="mouse font18"><a href="${ctx}/live.html">慢生活</a>
                     </li>
                     <li class="mouse font18"><a
-                            href="${ctx}/share.html">IT分享</a>
+                            href="${ctx}/share.html">学习时刻</a>
                     </li>
                     <li class="mouse font18"><a
                             href="${ctx}/MessageBoard.html">留言板</a>
@@ -88,10 +88,10 @@
             <div class="col-md-2">
 
             </div>
-            <div class="col-md-2">
+          <%--  <div class="col-md-2">
                 <a href="${ctx}/space.html"  style="text-decoration:none;background: #333;color: #fff;cursor: pointer;padding: 10px;border-radius: 5px;">博主空间</a>
 
-            </div>
+            </div>--%>
         </div>
         <div class="row">
             <div class="col-md-3">

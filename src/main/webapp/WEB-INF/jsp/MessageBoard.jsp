@@ -39,11 +39,11 @@
                     <li class="mouse font18"><a href="${pageContext.request.contextPath}/">首页</a></li>
                     <li class="mouse font18"><a
                             href="${pageContext.request.contextPath}/about.html">关于</a></li>
-                    <li class="mouse font18"><a href="${pageContext.request.contextPath}/growth.html">成长</a></li>
+
                     <li class="mouse font18"><a href="${pageContext.request.contextPath}/live.html">慢生活</a>
                     </li>
                     <li class="mouse font18"><a
-                            href="${pageContext.request.contextPath}/share.html">IT分享</a>
+                            href="${pageContext.request.contextPath}/share.html">学习时刻</a>
                     </li>
 
                     <li class="mouse font18 active"><a
@@ -110,10 +110,10 @@
                         </li>
                     </c:forEach>
                     <br>
-                    <div class="input-group">
+                    <div class="input-group" style="margin-bottom: 200px; margin-top: 100px;">
                         <input id="revertInput" class="form-control " type="text"/>
                         <span class="input-group-addon  "
-                              style="cursor: pointer;background-color: #5cb85c;color: #fff;border-width: 0"
+                              style="cursor: pointer;background-color: #5cb85c;color: #fff;border-width: 0;"
                               id="commentariesdiv"  >评论</span>
 
                     </div>

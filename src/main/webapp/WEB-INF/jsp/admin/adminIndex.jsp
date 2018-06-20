@@ -46,16 +46,16 @@
                     <ul class="tpl-left-nav-sub-menu"  >
                         <li>
                             <a href="${ctx}/admin/articlesPush.html" class="active">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>文章发布</span>    <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
 
                             </a>
                             <a href="${ctx}/admin/articlesManage.html">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>文章管理</span>
                             </a>
                             <a href="${ctx}/admin/articlesType.html">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>文章类型</span>
                             </a>
                         </li>
@@ -70,11 +70,11 @@
                     <ul class="tpl-left-nav-sub-menu" >
                         <li>
                             <a href="${ctx}/admin/spacePush.html"  >
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>说说发布</span>
                             </a>
                             <a href="${ctx}/admin/spaceManage.html">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>说说管理</span>
                             </a>
                         </li>

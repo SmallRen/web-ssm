@@ -21,26 +21,26 @@
                 <ul class="tpl-left-nav-sub-menu"  style="display: block;">
                     <li>
                         <a href="table-font-list.html">
-                            <i class="am-icon-angle-right"></i>
+                            
                             <span>文章浏览</span>
                             <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                         </a>
 
                         <a href="table-images-list.html" class="active">
-                            <i class="am-icon-angle-right"></i>
+                            
                             <span>文章发布</span>
                             <i class="tpl-left-nav-content tpl-badge-success ">
                                 18
                             </i>
                         </a>
                         <a href="form-news.html">
-                            <i class="am-icon-angle-right"></i>
+                            
                             <span>文章修改</span>
                             <i class="tpl-left-nav-content tpl-badge-primary">
                                 5
                             </i>
                             <a href="form-news-list.html">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>文字列表</span>
                             </a>
                         </a>
@@ -67,13 +67,13 @@
                 <ul class="tpl-left-nav-sub-menu" style="display: block;">
                     <li>
                         <a href="form-amazeui.html">
-                            <i class="am-icon-angle-right"></i>
+                            
                             <span>Amaze UI 表单</span>
                             <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                         </a>
 
                         <a href="form-line.html">
-                            <i class="am-icon-angle-right"></i>
+                            
                             <span>线条表单</span>
                         </a>
                     </li>

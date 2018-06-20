@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Modal -->
+<div hidden>任宝佳个人博客，是记录一个菜鸟成长的过程，是一个记录自己生活中的点滴、成长的辛酸和技术的分享的原创互联原创独立个人博客，文章发布与csdn同步更新。https://blog.csdn.net/qq_32448349，动态与微博同步更新。
+</div>
 <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" style=" margin-top: 8%;" role="dialog"
      data-backdrop="static"
      data-keyboard="false"

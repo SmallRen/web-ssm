@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <title>SmallRen博客后台</title>
     <link rel="SHORTCUT ICON" href="${ctx}/img/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="${ctx}/css/bootstrap4.min.css">

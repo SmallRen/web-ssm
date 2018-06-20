@@ -46,17 +46,16 @@
                     <ul class="tpl-left-nav-sub-menu" style="display: block;">
                         <li>
                             <a href="${ctx}/admin/articlesPush.html" class="active">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>文章发布</span> <i
                                     class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-
                             </a>
                             <a href="${ctx}/admin/articlesManage.html">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>文章管理</span>
                             </a>
                             <a href="${ctx}/admin/articlesType.html">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>文章类型</span>
                             </a>
                         </li>
@@ -71,11 +70,11 @@
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
                             <a href="${ctx}/admin/spacePush.html">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>说说发布</span>
                             </a>
                             <a href="${ctx}/admin/spaceManage.html">
-                                <i class="am-icon-angle-right"></i>
+                                
                                 <span>说说管理</span>
                             </a>
                         </li>
@@ -142,16 +141,16 @@
                     <div class="tpl-form-body tpl-form-line">
                         <div class="am-form tpl-form-line-form">
                             <div class="am-form-group">
-                                <label for="title" class="am-u-sm-3 am-form-label">标题 <span
+                                <label for="title" class="am-u-sm-1 am-form-label">标题 <span
                                         class="tpl-form-line-small-title">Title</span></label>
-                                <div class="am-u-sm-9">
+                                <div class="am-u-sm-11">
                                     <input type="text" class="tpl-form-input" id="title" placeholder="请输入标题文字">
                                 </div>
                             </div>
                             <div class="am-form-group">
-                                <label class="am-u-sm-3 am-form-label">分类<span
+                                <label class="am-u-sm-1 am-form-label">分类<span
                                         class="tpl-form-line-small-title">Type</span></label>
-                                <div class="am-u-sm-9">
+                                <div class="am-u-sm-11">
                                     <label style="font-size: 16px;color: #888;font-weight: normal"><input name="type"
                                                                                                           checked
                                                                                                           onchange="radiochange()"
@@ -165,18 +164,18 @@
                                 </div>
                             </div>
                             <div class="am-form-group">
-                                <label class="am-u-sm-3 am-form-label">分类<span
+                                <label class="am-u-sm-1 am-form-label">分类<span
                                         class="tpl-form-line-small-title">Type</span></label>
-                                <div class="am-u-sm-9">
-                                    <select data-am-selected="{btnWidth: '30%', btnSize: 'md', btnStyle: 'secondary'}">
+                                <div class="am-u-sm-11">
+                                    <select data-am-selected="{btnWidth: '10%', btnSize: 'md', btnStyle: 'secondary'}">
 
                                     </select>
                                 </div>
                             </div>
                             <div class="am-form-group">
-                                <label class="am-u-sm-3 am-form-label">封面图片<span
+                                <label class="am-u-sm-1 am-form-label">封面图片<span
                                         class="tpl-form-line-small-title">Images</span></label>
-                                <div class="am-u-sm-9">
+                                <div class="am-u-sm-11">
                                     <div class="am-form-group am-u-sm-6 am-form-file">
                                         <div class="tpl-form-file-img">
                                             <img src="/assets/img/a5.png" alt="" width="300" height="200"
@@ -192,26 +191,26 @@
                                 </div>
                             </div>
                             <div class="am-form-group">
-                                <label class="am-u-sm-3 am-form-label" for="preface">描述<span
+                                <label class="am-u-sm-1 am-form-label" for="preface">描述<span
                                         class="tpl-form-line-small-title">Description </span></label>
-                                <div class="am-u-sm-9">
+                                <div class="am-u-sm-11">
                                     <textarea rows="10" id="preface" cols="20"></textarea>
                                     <div>
                                     </div>
                                 </div>
                             </div>
                             <div class="am-form-group">
-                                <label class="am-u-sm-3 am-form-label">文章内容
+                                <label class="am-u-sm-1 am-form-label">文章内容
                                     <span>Content</span></label>
-                                <div class="am-u-sm-9">
-                                    <div id="editor">
+                                <div class="am-u-sm-11" >
+                                    <div id="editor" style="margin-left: 100px;">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="am-form-group">
-                                <div class="am-u-sm-9 am-u-sm-push-3">
-                                    <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success"
+                                <div style="text-align: center">
+                                    <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success" style="width:200px "
                                             id="submitbtn">提交
                                     </button>
                                 </div>
@@ -254,6 +253,14 @@
     var editor = new E('#editor');
     // 或者 var editor = new E( document.getElementById('#editor') )
     editor.customConfig.uploadImgShowBase64 = true;
+    editor.customConfig.pasteFilterStyle = false;
+    editor.customConfig.fontNames = [
+        '宋体',
+        '微软雅黑',
+        'Arial',
+        'Tahoma',
+        'Verdana'
+    ]
     editor.create();
     var progress = $.AMUI.progress;
     $(function () {

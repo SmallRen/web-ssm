@@ -51,7 +51,7 @@
                     <li class="mouse  font18"><a href="${ctx}/live.html">慢生活</a>
                     </li>
                     <li class="mouse font18"><a
-                            href="${ctx}/share.html">IT分享</a>
+                            href="${ctx}/share.html">学习时刻</a>
                     </li>
 
                     <li class="mouse font18"><a

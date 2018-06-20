@@ -44,7 +44,7 @@
                     </li>
                     <li class=" mouse font18"><a
                             href="${pageContext.request.contextPath}/about.html">关于</a></li>
-                    <li class="mouse font18"><a href="${pageContext.request.contextPath}/growth.html">成长</a></li>
+
                     <li class="mouse font18"><a href="${pageContext.request.contextPath}/live.html">慢生活</a>
                     </li>
                     <li class="mouse font18"><a
