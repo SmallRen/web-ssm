@@ -228,7 +228,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="am-form-group">
                         <label class="am-u-sm-1 am-form-label">文章内容
                             <span>Content</span></label>
